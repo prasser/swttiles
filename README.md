@@ -21,10 +21,10 @@ range. The underlying filter is changed when the user selects the item 80:
 Features
 ------
 
-1. Generic component: Tiles<T> can display arbitrary elements of type T
+1. Generic component: `Tiles<T>` can display arbitrary elements of type T
 2. Decorators: background color (supports gradients), line color, border width, border style, labels
-3. Filters: Filter<T> can be used to filter an arbitrary subset of items to display
-4. Order: Comparator<T> can be used to define an arbitrary order of the items displayed
+3. Filters: `Filter<T>` can be used to filter an arbitrary subset of items to display
+4. Order: `Comparator<T>` can be used to define an arbitrary order of the items displayed
 
 Example
 ------	
@@ -60,3 +60,7 @@ tiles.setComparator(new Comparator<Integer>(){
 Download
 ------
 Tiles is currently work in progress, so no downloads, yet.
+
+License
+------
+[EPL 1.0](https://raw.github.com/prasser/tiles/master/epl-v10.html)
