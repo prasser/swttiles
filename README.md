@@ -3,7 +3,7 @@ SWT Tiles
 
 Tiles is a widget for the Standard Widget Toolkit (SWT) that displays elements as a set of tiles.
 Elements can be filtered, sorted and decorated. When decorators, the filter or the sort order are
-changed, the widget shows a smooth transition between the previous and the current state.    
+changed, the widget shows a smooth transition between the previous and the current state.
 
 Overview
 ------
@@ -16,7 +16,7 @@ to their background color. Even numbers have a thick blue line while prime numbe
 dotted line around time. The view either shows the numbers 0 to 80 or the numbers 40 to 120 from the overall
 range. The underlying filter is changed when the user selects the item 80:
 
-[![Screenshot-1](https://raw.github.com/prasser/tiles/master/media/example.gif)](https://raw.github.com/prasser/tiles/master/media/example.gif)
+[![Screencast loading...](https://raw.github.com/prasser/tiles/master/media/example.gif)](https://raw.github.com/prasser/tiles/master/media/example.gif)
 
 Features
 ------
