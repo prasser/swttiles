@@ -63,4 +63,4 @@ Tiles is currently work in progress, so no downloads, yet.
 
 License
 ------
-[EPL 1.0](https://github.com/prasser/tiles/master/epl-v10.html)
+EPL 1.0
