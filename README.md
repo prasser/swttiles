@@ -13,18 +13,18 @@ be able to sort or filter items and some properties should be presented to the u
 manner. This can be implemented with SWT Tiles. The following screen cast shows an example in which
 the numbers 0 - 120 are displayed. The order of items is indicated by applying a gradient
 to their background color. Even numbers have a thick blue line while prime numbers have a black
-dotted line around time. The view either shows the numbers 0 to 80 or the numbers 40 to 120 from the overall
-range. The underlying filter is changed when the user selects the item 80:
+dotted line around them. The view either shows the numbers 0 to 80 or the numbers 40 to 120 from the overall
+range. The filter is changed when the user selects the item 80:
 
 [![Screencast loading...](https://raw.github.com/prasser/tiles/master/media/example.gif)](https://raw.github.com/prasser/tiles/master/media/example.gif)
 
 Features
 ------
 
-1. Generic component: `Tiles<T>` can display arbitrary elements of type T
-2. Decorators: background color (supports gradients), line color, border width, border style, labels
-3. Filters: `Filter<T>` can be used to filter an arbitrary subset of items to display
-4. Order: `Comparator<T>` can be used to define an arbitrary order of the items displayed
+1. Generic component: `Tiles<T>` can display any element of type T.
+2. Decorators: Subclasses of `Decorator<T>` for background colors (supports gradients), line colors, border widths, border styles and labels.
+3. Filters: `Filter<T>` can be used to select arbitrary subsets to display with the widget.
+4. Order: `Comparator<T>` can be used to impose an arbitrary order on the items displayed.
 
 Example
 ------	
