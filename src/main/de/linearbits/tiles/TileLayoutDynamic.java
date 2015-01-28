@@ -6,8 +6,9 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *     Fabian Prasser - initial API and implementation
- ******************************************************************************/
+ * Fabian Prasser - initial API and implementation
+ * ****************************************************************************
+ */
 package de.linearbits.tiles;
 
 /**
@@ -16,32 +17,32 @@ package de.linearbits.tiles;
  * @author Fabian Prasser
  */
 public class TileLayoutDynamic extends TileLayout {
-	
-    /** Width*/
-	private final int width;
-	/** Height*/
-	private final int height;
 
-	/**
-	 * Creates a new instance
-	 * @param width
-	 * @param height
-	 * @param marginX
-	 * @param marginY
-	 */
-	public TileLayoutDynamic(int width, int height, int marginX, int marginY){
-		super(marginX, marginY);
-		this.width = width;
-		this.height = height;
-	}
+    /** Number of columns */
+    private final int columns;
+    /** Number of rows */
+    private final int rows;
 
-	@Override
-	public int getHeight(Tiles<?> tiles) {
-		return tiles.getSize().y / height;
-	}
+    /**
+     * Creates a new instance
+     * @param columns
+     * @param rows
+     * @param marginX
+     * @param marginY
+     */
+    public TileLayoutDynamic(int columns, int rows, int marginX, int marginY) {
+        super(marginX, marginY);
+        this.columns = columns;
+        this.rows = rows;
+    }
 
-	@Override
-	public int getWidth(Tiles<?> tiles) {
-		return tiles.getSize().x / width;
-	}
+    @Override
+    public int getHeight(Tiles<?> tiles) {
+        return (tiles.getSize().y - (rows + 1) * marginY) / rows;
+    }
+
+    @Override
+    public int getWidth(Tiles<?> tiles) {
+        return (tiles.getSize().x - (columns + 1) * marginX) / columns;
+    }
 }
