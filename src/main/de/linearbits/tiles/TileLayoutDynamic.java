@@ -38,11 +38,11 @@ public class TileLayoutDynamic extends TileLayout {
 
     @Override
     public int getHeight(Tiles<?> tiles) {
-        return (tiles.getSize().y - (rows + 1) * marginY) / rows;
+        return (tiles.getSize().y - (rows + 1) * getMarginY()) / rows;
     }
 
     @Override
     public int getWidth(Tiles<?> tiles) {
-        return (tiles.getSize().x - (columns + 1) * marginX) / columns;
+        return (tiles.getSize().x - (columns + 1) * getMarginX()) / columns;
     }
 }

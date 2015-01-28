@@ -17,9 +17,9 @@ package de.linearbits.tiles;
 public abstract class TileLayout {
 	
     /** Margin*/
-    protected final int marginX;
+    private final int marginX;
 	/** Margin*/
-	protected final int marginY;
+    private final int marginY;
 	
 	/**
 	 * Creates a new instance
