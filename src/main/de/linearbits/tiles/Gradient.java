@@ -115,7 +115,7 @@ public class Gradient {
 	 * @param value
 	 * @return
 	 */
-	protected Color getColor(double value) {
+	public Color getColor(double value) {
 		int index = (int)Math.round((double)(colors.length-1) * value);
 		return colors[index];
 	}
