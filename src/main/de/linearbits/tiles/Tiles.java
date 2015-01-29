@@ -338,6 +338,16 @@ public class Tiles<T> extends Canvas {
 		this.addFrame();
 		this.next.setFilter(filter);
 	}
+	
+    /**
+     * Sets the selected item
+     * @return
+     */
+    public void setSelectedItem(T item) {
+        super.checkWidget();
+        this.selectedItem = item;
+        this.redraw();
+    }
     
     /**
 	 * Adds an item
