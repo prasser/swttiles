@@ -312,7 +312,7 @@ public class Tiles<T> extends Canvas {
 	 * 
 	 * @param decorator
 	 */
-	public void setDecoratorLineWith(DecoratorInteger<T> decorator) {
+	public void setDecoratorLineWidth(DecoratorInteger<T> decorator) {
 	    super.checkWidget();
 		this.addFrame();
 		this.next.setDecoratorLineWidth(decorator);
