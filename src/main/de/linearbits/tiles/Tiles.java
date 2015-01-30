@@ -312,7 +312,7 @@ public class Tiles<T> extends Canvas {
 	 * 
 	 * @param decorator
 	 */
-	public void setDecoratorLineWith(DecoratorInteger<T> decorator) {
+	public void setDecoratorLineWidth(DecoratorInteger<T> decorator) {
 	    super.checkWidget();
 		this.addFrame();
 		this.next.setDecoratorLineWidth(decorator);
@@ -338,6 +338,16 @@ public class Tiles<T> extends Canvas {
 		this.addFrame();
 		this.next.setFilter(filter);
 	}
+	
+    /**
+     * Sets the selected item
+     * @return
+     */
+    public void setSelectedItem(T item) {
+        super.checkWidget();
+        this.selectedItem = item;
+        this.redraw();
+    }
     
     /**
 	 * Adds an item

@@ -76,7 +76,7 @@ public class Example4 {
 		tiles.setDecoratorLabel(getDecoratorLabel(tiles));
 		tiles.setDecoratorLineColor(getDecoratorLineColor(tiles));
 		tiles.setDecoratorLineStyle(getDecoratorLineStyle(tiles));
-		tiles.setDecoratorLineWith(getDecoratorLineWidth(tiles));
+		tiles.setDecoratorLineWidth(getDecoratorLineWidth(tiles));
 		tiles.setDecoratorTooltip(getDecoratorTooltip(tiles));
 		tiles.update();
 		

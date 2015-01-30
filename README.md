@@ -59,7 +59,17 @@ tiles.setComparator(new Comparator<Integer>(){
 
 Download
 ------
-Tiles is currently work in progress, so no downloads, yet.
+A binary version (JAR file) is available for download [here](https://rawgithub.com/prasser/swttiles/master/jars/swttiles-0.0.1.jar).
+
+The according Javadoc is available for download [here](https://rawgithub.com/prasser/swttiles/master/jars/swttiles-0.0.1-doc.jar). 
+
+Documentation
+------
+Online documentation can be found [here](https://rawgithub.com/prasser/swttiles/master/doc/index.html).
+
+SWT Tiles in action
+------
+Too see SWT Tiles in action, take a look at [ARX](https://github.com/arx-deidentifier/arx).
 
 License
 ------
