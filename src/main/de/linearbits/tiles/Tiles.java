@@ -25,7 +25,9 @@ import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.graphics.Path;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Transform;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
@@ -608,7 +610,8 @@ public class Tiles<T> extends Canvas {
     }
 
     /**
-     * Source: http://www.jaret.de/jaretutil/xref/de/jaret/util/swt/SwtGraphicsHelper.html
+     * Paints the given string within the given rectangle
+     * 
      * @param gc
      * @param string
      * @param x
@@ -620,7 +623,41 @@ public class Tiles<T> extends Canvas {
         Point extent = gc.textExtent(string);
         int xx = x + (width - extent.x) / 2;
         int yy = y + (height - extent.y) / 2;
-        gc.drawText(string, xx, yy, true);
+        
+        if (extent.x <= width * 0.9f) {
+            gc.drawText(string, xx, yy, true);
+        } else {
+
+            // Enable anti-aliasing
+            gc.setTextAntialias(SWT.ON);
+            
+            // Compute position and factor
+            float factor1 = width * 0.9f / (float)extent.x;
+            float factor2 = height * 0.9f / (float)extent.y;
+            float factor = Math.min(factor1, factor2);
+            int positionX = x + (int)(((float)width - (float)extent.x * factor) / 2f); 
+            int positionY = y + (int)(((float)height - (float)extent.y * factor) / 2f);
+            
+            // Initialize transformation
+            Transform transform = new Transform(gc.getDevice());
+            transform.identity();
+            transform.translate(positionX, positionY);
+            transform.scale(factor, factor);
+            gc.setTransform(transform);
+            
+            // Prepare
+            Path path = new Path(this.getDisplay());
+            path.addString(string, 0, 0, gc.getFont());
+            
+            // Draw and reset
+            Color back = gc.getBackground();
+            gc.setBackground(gc.getForeground());
+            gc.fillPath(path);
+            gc.setTransform(null);
+            gc.setTextAntialias(SWT.OFF);
+            gc.setBackground(back);
+            path.dispose();
+        }
     }
 
 	/**
