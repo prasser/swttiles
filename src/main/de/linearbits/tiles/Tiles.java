@@ -630,6 +630,7 @@ public class Tiles<T> extends Canvas {
 
             // Enable anti-aliasing
             gc.setTextAntialias(SWT.ON);
+            gc.setAntialias(SWT.ON);
             
             // Compute position and factor
             float factor1 = width * 0.9f / (float)extent.x;
@@ -655,6 +656,7 @@ public class Tiles<T> extends Canvas {
             gc.fillPath(path);
             gc.setTransform(null);
             gc.setTextAntialias(SWT.OFF);
+            gc.setAntialias(SWT.OFF);
             gc.setBackground(back);
             path.dispose();
         }
