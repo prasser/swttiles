@@ -10,6 +10,8 @@
  ******************************************************************************/
 package de.linearbits.tiles;
 
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
@@ -26,12 +28,22 @@ public class GradientHeatscale extends Gradient{
      */
 	private static final Color[] getColors(Tiles<?> tiles){
 	    Display device = tiles.getDisplay();
-	    return new Color[]{	new Color(device, 0, 0, 255), 
-	    					new Color(device, 0, 255, 255),
-	    					new Color(device, 0, 200, 0), 
-	    					new Color(device, 255, 255, 0), 
-	    					new Color(device, 255, 69, 0),
-	    					new Color(device, 255, 0, 0)};
+	    final Color[] colors = new Color[]{	new Color(device, 0, 0, 255), 
+                	    					new Color(device, 0, 255, 255),
+                	    					new Color(device, 0, 200, 0), 
+                	    					new Color(device, 255, 255, 0), 
+                	    					new Color(device, 255, 69, 0),
+                	    					new Color(device, 255, 0, 0)};
+	    
+        tiles.addDisposeListener(new DisposeListener() {
+            @Override
+            public void widgetDisposed(DisposeEvent arg0) {
+                for (Color c : colors) {
+                    if (!c.isDisposed()) c.dispose();
+                }
+            }
+        });
+        return colors;
 	}
 	
 	/**
