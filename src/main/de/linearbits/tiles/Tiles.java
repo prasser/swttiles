@@ -80,7 +80,7 @@ public class Tiles<T> extends Canvas {
     /** Active item*/
     private T                     activeItem        = null;
 
-    /** Color*/
+    /** Color */
     private Color                 black;
 
     /**
@@ -606,6 +606,12 @@ public class Tiles<T> extends Canvas {
 	            gc.fillRectangle(tile.x, tile.y, tile.width, tile.height);
 	            gc.setAlpha(255);
 			}
+        }
+
+        // Draw border
+        if ((getStyle() & SWT.BORDER) != 0) {
+            gc.setForeground(gc.getDevice().getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+            gc.drawRectangle(0, 0, getSize().x-1, getSize().y-1);
         }
     }
 
