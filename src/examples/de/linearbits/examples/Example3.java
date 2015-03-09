@@ -19,9 +19,9 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
-import de.linearbits.tiles.Filter;
-import de.linearbits.tiles.TileLayoutDynamic;
-import de.linearbits.tiles.Tiles;
+import de.linearbits.swt.tiles.Filter;
+import de.linearbits.swt.tiles.TileLayoutDynamic;
+import de.linearbits.swt.tiles.Tiles;
 
 /**
  * Example for using the Tiles SWT Widget

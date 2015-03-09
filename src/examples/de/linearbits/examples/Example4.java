@@ -23,16 +23,16 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
-import de.linearbits.tiles.DecoratorColor;
-import de.linearbits.tiles.DecoratorColorGradient;
-import de.linearbits.tiles.DecoratorInteger;
-import de.linearbits.tiles.DecoratorListener;
-import de.linearbits.tiles.DecoratorString;
-import de.linearbits.tiles.Filter;
-import de.linearbits.tiles.Gradient;
-import de.linearbits.tiles.GradientHeatscale;
-import de.linearbits.tiles.TileLayoutDynamic;
-import de.linearbits.tiles.Tiles;
+import de.linearbits.swt.tiles.DecoratorColor;
+import de.linearbits.swt.tiles.DecoratorColorGradient;
+import de.linearbits.swt.tiles.DecoratorInteger;
+import de.linearbits.swt.tiles.DecoratorListener;
+import de.linearbits.swt.tiles.DecoratorString;
+import de.linearbits.swt.tiles.Filter;
+import de.linearbits.swt.tiles.Gradient;
+import de.linearbits.swt.tiles.GradientHeatscale;
+import de.linearbits.swt.tiles.TileLayoutDynamic;
+import de.linearbits.swt.tiles.Tiles;
 
 /**
  * Example for using the Tiles SWT Widget
