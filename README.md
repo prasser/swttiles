@@ -16,7 +16,7 @@ to their background color. Even numbers have a thick blue line while prime numbe
 dotted line around them. The view either shows the numbers 0 to 80 or the numbers 40 to 120 from the overall
 range. The filter is changed when the user selects the item 80:
 
-![Screencast loading...](https://raw.github.com/prasser/swttiles/master/media/example.gif)
+![Screencast loading...](https://github.com/prasser/swttiles/raw/master/media/example.gif)
 Features
 ------
 
