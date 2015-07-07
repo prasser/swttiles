@@ -578,14 +578,14 @@ public class Tiles<T> extends Canvas {
 			// Background
 			gc.setClipping(0, 0, width, height);
 			
+			Color backgroundColor = tile.backgroundColor;
 			if (tile.item == activeItem) {
-			    gc.setBackground(lightDarker(tile.backgroundColor));
+			    backgroundColor = lightDarker(tile.backgroundColor);
 			} else if (tile.item == selectedItem) {
-			    gc.setBackground(strongDarker(tile.backgroundColor));
-			} else {
-			    gc.setBackground(tile.backgroundColor);
+			    backgroundColor = strongDarker(tile.backgroundColor);
 			}
 			
+			gc.setBackground(backgroundColor);
 			gc.fillRectangle(tile.x, tile.y, tile.width, tile.height);
 
 			// Border
@@ -600,8 +600,9 @@ public class Tiles<T> extends Canvas {
 			paintString(gc, tile.label, tile.x, tile.y, tile.width, tile.height);
 			
 			// Dispose
-			if (tile.item == activeItem || tile.item == selectedItem) {
-                gc.getBackground().dispose();
+			if (backgroundColor != tile.backgroundColor) {
+			    gc.setBackground(tile.backgroundColor);
+			    backgroundColor.dispose();
 			}
         }
 
