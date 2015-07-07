@@ -577,7 +577,15 @@ public class Tiles<T> extends Canvas {
 
 			// Background
 			gc.setClipping(0, 0, width, height);
-			gc.setBackground(tile.backgroundColor);
+			
+			if (tile.item == activeItem) {
+			    gc.setBackground(lightDarker(tile.backgroundColor));
+			} else if (tile.item == selectedItem) {
+			    gc.setBackground(strongDarker(tile.backgroundColor));
+			} else {
+			    gc.setBackground(tile.backgroundColor);
+			}
+			
 			gc.fillRectangle(tile.x, tile.y, tile.width, tile.height);
 
 			// Border
@@ -591,20 +599,9 @@ public class Tiles<T> extends Canvas {
 			gc.setClipping(tile.x, tile.y, tile.width, tile.height);
 			paintString(gc, tile.label, tile.x, tile.y, tile.width, tile.height);
 			
-			if (tile.item == activeItem) {
-
-	        	gc.setClipping(0, 0, width, height);
-	        	gc.setAlpha(70);
-	            gc.setBackground(black);
-	            gc.fillRectangle(tile.x, tile.y, tile.width, tile.height);
-	            gc.setAlpha(255);
-			} 
-			if (tile.item == selectedItem) {
-	        	gc.setClipping(0, 0, width, height);
-	        	gc.setAlpha(100);
-	            gc.setBackground(black);
-	            gc.fillRectangle(tile.x, tile.y, tile.width, tile.height);
-	            gc.setAlpha(255);
+			// Dispose
+			if (tile.item == activeItem || tile.item == selectedItem) {
+                gc.getBackground().dispose();
 			}
         }
 
@@ -613,6 +610,36 @@ public class Tiles<T> extends Canvas {
             gc.setForeground(gc.getDevice().getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
             gc.drawRectangle(0, 0, getSize().x-1, getSize().y-1);
         }
+    }
+
+    /**
+     * Makes it darker
+     * @param color
+     * @return
+     */
+    private Color strongDarker(Color color) {
+        int r = color.getRed() - 125;
+        int g = color.getGreen() - 125;
+        int b = color.getBlue() - 125;
+        r = r >= 0 ? r : 0;
+        g = g >= 0 ? g : 0;
+        b = b >= 0 ? b : 0;
+        return new Color(color.getDevice(), r, g, b);
+    }
+
+    /**
+     * Makes it a little darker
+     * @param color
+     * @return
+     */
+    private Color lightDarker(Color color) {
+        int r = color.getRed() - 75;
+        int g = color.getGreen() - 75;
+        int b = color.getBlue() - 75;
+        r = r >= 0 ? r : 0;
+        g = g >= 0 ? g : 0;
+        b = b >= 0 ? b : 0;
+        return new Color(color.getDevice(), r, g, b);
     }
 
     /**
