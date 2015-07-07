@@ -665,6 +665,7 @@ public class Tiles<T> extends Canvas {
             gc.setAntialias(SWT.OFF);
             gc.setBackground(back);
             path.dispose();
+            transform.dispose();
         }
     }
 
