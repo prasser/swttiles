@@ -17,6 +17,7 @@ dotted line around them. The view either shows the numbers 0 to 80 or the number
 range. The filter is changed when the user selects the item 80:
 
 ![Screencast loading...](https://github.com/prasser/swttiles/raw/master/media/example.gif)
+
 Features
 ------
 
