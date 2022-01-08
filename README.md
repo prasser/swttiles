@@ -8,7 +8,7 @@ changed, the widget shows a smooth transition between the previous and the curre
 Status
 ------
 
-Tiles has been merged into the [Eclipse Nebula](https://www.eclipse.org/nebula/) project (see [here](https://github.com/eclipse/nebula/tree/master/widgets/tiles)). This repository is kept for historic reasons only. To use the latest version of Tiles, please use the Nebular version. 
+Tiles has been merged into the [Eclipse Nebula](https://www.eclipse.org/nebula/) project (see [here](https://github.com/eclipse/nebula/tree/master/widgets/tiles)). This repository is kept for historic reasons only. To use the latest version of Tiles, please use the Nebula version. 
 
 Overview
 ------
