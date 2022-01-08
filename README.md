@@ -5,10 +5,10 @@ Tiles is a widget for the Standard Widget Toolkit (SWT) that displays elements a
 Elements can be filtered, sorted and decorated. When decorators, the filter or the sort order are
 changed, the widget shows a smooth transition between the previous and the current state.
 
-Status
+Latest version
 ------
 
-Tiles has been merged into the [Eclipse Nebula](https://www.eclipse.org/nebula/) project (see [here](https://github.com/eclipse/nebula/tree/master/widgets/tiles)). This repository is kept for historic reasons only. To use the latest version of Tiles, please use the Nebula version. 
+***Tiles has been merged into the [Eclipse Nebula](https://www.eclipse.org/nebula/) project (see [here](https://github.com/eclipse/nebula/tree/master/widgets/tiles)). This repository is kept for historic reasons only. To use the latest version of Tiles, please use the Nebula version***.
 
 Overview
 ------
